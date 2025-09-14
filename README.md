@@ -5,9 +5,6 @@
 [Licensed under the MIT License](LICENSE)
 
 
-Youtube Video:
-[https://youtu.be/ETtwTv2KcGc](https://youtu.be/tVrO_yT442g)
-
 ### So far we have tests from subjects such as:
 - Geometry
 - Algebra II
@@ -17,7 +14,7 @@ Youtube Video:
 
 ### About this project:
 
-I started this project off just for the CS50 final project. I see a problem where there aren't any good resources for the NY regents in June that people take. Besides the practice test, most things cost money. Our mission is to help kids in New York be able to do just a bit better. Even a 1 point increase in an exam fulfulls our mission. Personally, I have taken the regents for Spanish I (100), Algebra I (98), Geometry (89), Biology (92), and Earth Science (96). 
+I started this project off just for fun; just for me to learn myself. I see a problem where there aren't any good resources for the NY regents in June that people take. Besides the practice test, most things cost money. Our mission is to help kids in New York be able to do just a bit better. Even a 1 point increase in an exam fulfulls our mission. Personally, I have taken the regents for Spanish I (100), Algebra I (98), Geometry (89), Biology (92), and Earth Science (96). 
 
 The methods I have used to be successful in these regents exams is what I want to share to other students across the state to help them achieve greater scores than me.
 
@@ -92,7 +89,5 @@ You will have to make a new `.db` file when using the website. Name it `database
 - Tell any friends or your school
 
 ## Extra
-
-### [Take CS50x Here](https://www.edx.org/learn/computer-science/harvard-university-cs50-s-introduction-to-computer-science?utm_source=google&utm_campaign=19322989673&utm_medium=cpc&utm_term=edx%20cs50%20course&hsa_acc=7245054034&hsa_cam=19322989673&hsa_grp=146273875364&hsa_ad=642047721504&hsa_src=g&hsa_tgt=kwd-757305580526&hsa_kw=edx%20cs50%20course&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=19322989673&gbraid=0AAAAADj3FxHOiTT4iE2kK3K1KAAyNPqeU&gclid=CjwKCAjwiY_GBhBEEiwAFaghvghGTMgsxWbWIlDRNz9CaoXmf8B7ZyL2rCLbWsADCWBPw2Ty61zZ0BoCqaMQAvD_BwE)
 
 ### So far, the project doesn't seem to work with Github Codespaces
