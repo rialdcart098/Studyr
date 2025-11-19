@@ -7,13 +7,19 @@ const examSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    subject: {
-        type: String,
-        required: true
+    course: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Courses'
+        }
+    ],
+    questionLength: {
+        type: Number,
+        default: 0
     },
     questions: {
         type: Array,
-        required: true,
+        default: []
     }
 })
 examSchema.set('toJSON', {

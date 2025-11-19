@@ -16,7 +16,11 @@ const userSchema = new mongoose.Schema({
         {
             type: mongoose.Schema.Types.ObjectId
         }
-    ]
+    ],
+    admin: {
+        type: Boolean,
+        default: false
+    }
 })
 userSchema.set('toJSON', {
     transform(document, returnedObject){
