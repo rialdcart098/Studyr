@@ -30,8 +30,6 @@ This website was mainly made for students to check on their own, specifically pe
 ### Features hoping to be added in the future:
 - More statistics of how you do on each unit of a subject
 - More subjects, and more exams always
-- Plan on making more websites under this one's wing
-  - (Loggr) Error logger for MCQ style exams such as the SAT
 - Learning resources
 - AI tutor and test generator.
 
