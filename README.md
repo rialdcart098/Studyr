@@ -1,4 +1,3 @@
-![Homepage Screenshot](static/bg_images/favicon.svg)
 # Enter Studyr (beta)!
 
 ## A test prep website for people in New York taking the regents exams!
@@ -31,12 +30,15 @@ This website was mainly made for students to check on their own, specifically pe
 ### Features hoping to be added in the future:
 - More statistics of how you do on each unit of a subject
 - More subjects, and more exams always
+- Plan on making more websites under this one's wing
+  - Error logger for MCQ style exams such as the SAT
+  - 
 - Learning resources
 - AI tutor and test generator.
 
 ### How will I plan on implementing these features?
 - I will most likely use an LLM to make the AI create json files as the quizzes, and make a chat bot. For now, this is a completely free project, and it will use LLM's that are completely free.
-- - Going into detail in this, I hope to make a flow where I give the AI a detailed prompt including the user's analytics of the quizzes taken, based on their subject, and a json example in which it will answer with just the `.json` file to give the quiz.
+  - Going into detail in this, I hope to make a flow where I give the AI a detailed prompt including the user's analytics of the quizzes taken, based on their subject, and a json example in which it will answer with just the `.json` file to give the quiz.
 - For the AI Assistant I will have to make even more of a detailed prompt so that the AI doesn't break or give any NSFW responses.
 - Add more to the schema to get more information on how a user performs. For example, get averages of how a user does in each unit of a subject, and feed it to the LLM to make a more personalized quiz. Also use Chart.js to make different types of charts other than a table.
 - I can make small videos covering each question, and short lectures on each topic. A practice set can be added at the end, and some text content if user doesn't like watching videos.
