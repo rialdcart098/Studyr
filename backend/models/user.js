@@ -14,7 +14,8 @@ const userSchema = new mongoose.Schema({
     },
     exams: [
         {
-            type: mongoose.Schema.Types.ObjectId
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Exams'
         }
     ],
     admin: {

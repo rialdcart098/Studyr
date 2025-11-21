@@ -1,9 +1,10 @@
 const userRouter = require('express').Router()
 const User = require('../models/user')
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 
 userRouter.get('/', async (request, response) => {
-    const users = await User.find({}).populate('exams', { name: 1, grade: 1, subject: 1 })
+    const users = await User.find({}).populate({ path: 'exams.exam', select: 'name' })
     response.json(users)
 })
 userRouter.post('/', async (request, response) => {
@@ -22,5 +23,17 @@ userRouter.post('/', async (request, response) => {
     })
     const savedUser = await user.save()
     return response.status(201).json(savedUser)
+})
+userRouter.get('/:id', async (request, response) => {
+    const user = await user.findById(request.params.id).populate({ path: 'exams.exam', select: 'name' })
+    if (user) return response.json(user)
+    return response.status(404).end()
+})
+userRouter.put('/:id', async (request, response) => {
+  const { examId, grade } = request.body
+  const user = await User.findByIdandUpdate(request.params.id, {
+
+  })
+
 })
 module.exports = userRouter

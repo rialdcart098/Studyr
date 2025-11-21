@@ -13,10 +13,6 @@ const examSchema = new mongoose.Schema({
             ref: 'Courses'
         }
     ],
-    questionLength: {
-        type: Number,
-        default: 0
-    },
     questions: {
         type: Array,
         default: []

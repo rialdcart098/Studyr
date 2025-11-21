@@ -16,10 +16,16 @@ const courseSchema = new mongoose.Schema({
         required: true
     },
     exams: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Exams'
+      {
+        exam: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'Exams'
+        },
+        grade: {
+          type: Number,
+          required: true
         }
+      }
     ]
 })
 courseSchema.set('toJSON', {
