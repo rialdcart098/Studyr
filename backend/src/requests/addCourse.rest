@@ -1,0 +1,8 @@
+POST http://localhost:6969/api/courses
+Content-Type: application/json
+
+{
+    "name": "Geometry",
+    "subject": "math",
+    "rigor": "highschool"
+}

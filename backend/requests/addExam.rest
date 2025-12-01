@@ -1,7 +1,0 @@
-POST http://localhost:6969/api/exams
-Content-Type: application/json
-
-{
-    "name": "Algebra II Regents 2022 Mix",
-    "courseName": "Algebra II"
-}
