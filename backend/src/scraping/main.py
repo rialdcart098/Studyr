@@ -19,21 +19,30 @@
 #             img_file.write(image_bytes)
 #
 import requests
-questions = [
-    {
-        "question": "Based on these results, it was determined that approximately 75\\% of teens use social media at least once per day. What is the best explanation of the difference in the results between the two surveys?",
-        "choices": {
-            "1": "The smaller sample size of five teens resulted in a smaller margin of error and should provide a more accurate estimate.",
-            "2": "The smaller sample size of five teens resulted in a bigger margin of error and should provide a more accurate estimate.",
-            "3": "The larger sample size of 50 teens resulted in a smaller margin of error and should provide a more accurate estimate.",
-            "4": "The larger sample size of 50 teens resulted in a bigger margin of error and should provide a more accurate estimate."
-        },
-        "correct": 3,
-        "image": "image_1"
-    }
-]
-# PAGE 6
-url = "http://localhost:6969/api/exams/692c8e0cf2179768d53de50f"
-for question in questions:
-    print(question)
-    response = requests.put(url, json={"question": question})
+import pymupdf.layout
+import pymupdf4llm
+
+import os
+doc = pymupdf.open("../questionbank/ALGEBRA_2.pdf")
+json = pymupdf4llm.to_markdown(doc)
+with open('algebra2.txt', 'w') as f:
+    f.write(json)
+#
+# questions = [
+#     {
+#         "question": "Based on these results, it was determined that approximately 75\\% of teens use social media at least once per day. What is the best explanation of the difference in the results between the two surveys?",
+#         "choices": {
+#             "1": "The smaller sample size of five teens resulted in a smaller margin of error and should provide a more accurate estimate.",
+#             "2": "The smaller sample size of five teens resulted in a bigger margin of error and should provide a more accurate estimate.",
+#             "3": "The larger sample size of 50 teens resulted in a smaller margin of error and should provide a more accurate estimate.",
+#             "4": "The larger sample size of 50 teens resulted in a bigger margin of error and should provide a more accurate estimate."
+#         },
+#         "correct": 3,
+#         "image": "image_1"
+#     }
+# ]
+# # PAGE 6
+# url = "http://localhost:6969/api/exams/692c8e0cf2179768d53de50f"
+# for question in questions:
+#     print(question)
+#     response = requests.put(url, json={"question": question})
