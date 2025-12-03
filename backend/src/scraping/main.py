@@ -23,6 +23,7 @@ import pymupdf.layout
 import pymupdf4llm
 
 import os
+os.environ["TESSDATA_PREFIX"] = "C:/Program Files/Tesseract-OCR/tessdata"
 doc = pymupdf.open("../questionbank/ALGEBRA_2.pdf")
 json = pymupdf4llm.to_markdown(doc)
 with open('algebra2.txt', 'w') as f:
