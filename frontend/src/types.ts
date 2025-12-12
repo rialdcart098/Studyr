@@ -1,3 +1,9 @@
+import React from 'react'
+export interface PropTypes {
+    children: React.ReactNode
+}
+
+
 export interface Course {
     name: string,
     subject: string,

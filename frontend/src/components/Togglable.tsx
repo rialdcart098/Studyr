@@ -1,13 +1,14 @@
-import React from 'react'
-interface PropTypes {
+import type { PropTypes } from '../types'
+import React from "react";
+
+interface TogglableProp extends PropTypes {
     buttonLabel: string,
     toggleVisibility: (arg: unknown) => void,
     visible: boolean,
     className: string,
-    children: React.ReactNode
 }
 
-const Togglable = (props: PropTypes) => {
+const Togglable = (props: TogglableProp) => {
     const hideWhenVisible = { display: props.visible ? 'none' : '' }
     const showWhenVisible = { display: props.visible ? '' : 'none' }
 
