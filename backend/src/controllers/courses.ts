@@ -30,4 +30,13 @@ courseRouter.get('/:id', async (request: Request, response: Response) => {
     if (course) return response.json(course)
     return response.status(404).end()
 })
+courseRouter.put('/:id', async (request: Request, response: Response) => {
+    const { exam } = request.body
+    const course = await Course.findByIdAndUpdate(
+        request.params.id,
+        { $push: { exams: exam } }
+    )
+    if (course) return response.status(201).json(course)
+    return response.status(404).end()
+})
 export default courseRouter

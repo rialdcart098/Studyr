@@ -4,7 +4,7 @@ import Course from '../models/course.js'
 
 const examRouter: Router = express.Router()
 
-examRouter.get('/', async (request: Request, response: Response) => {
+examRouter.get('/', async (_request: Request, response: Response) => {
     const exams = await Exam.find({})
         .populate('course', { name: 1 })
     response.json(exams)
@@ -21,9 +21,10 @@ examRouter.post('/', async (request: Request, response: Response) => {
     })
     const savedExam = await newExam.save()
     await savedExam.populate('course', { name: 1 })
-    console.log(savedExam)
+    console.log('exams: ', course.exams)
     course.exams.push(savedExam._id)
     console.log(course)
+    await course.save()
     return response.status(201).json(savedExam)
 })
 examRouter.get('/:id', async (request: Request, response: Response) => {
@@ -39,7 +40,7 @@ examRouter.put('/:id', async (request, response) => {
         { $push: { questions: question } },
         { new: true }
     ).populate('course', { name: 1 })
-    if (updatedExam) return response.json(updatedExam)
+    if (updatedExam) return response.status(201).json(updatedExam)
     return response.status(404).end()
 })
 export default examRouter

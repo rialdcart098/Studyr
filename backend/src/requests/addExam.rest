@@ -2,6 +2,6 @@ POST http://localhost:6969/api/exams
 Content-Type: application/json
 
 {
-    "name": "Algebra II Mega Bank",
+    "name": "Algebra II Test Mix",
     "courseName": "Algebra II"
 }
