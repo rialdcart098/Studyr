@@ -14,6 +14,9 @@ const userSlice = createSlice({
         },
         addUser(state, action: PayloadAction<User>) {
             state.push(action.payload)
+        },
+        updateUser(state, action: PayloadAction<User>){
+            state.map(user => user.id === action.payload.id ? action.payload : user)
         }
     }
 })
@@ -29,6 +32,11 @@ export const signUp = (user: User) => {
     return async (dispatch: AppDispatch) => {
         const addNewUser = await userService.create(user)
         dispatch(addUser(addNewUser))
+    }
+}
+export const updateUserExams = (Exam: User) => {
+    return async (dispatch: AppDispatch) => {
+
     }
 }
 export default userSlice.reducer

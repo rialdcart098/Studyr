@@ -7,6 +7,7 @@ import {useState} from "react";
 const Exam = ({ exam }: { id: string, name: string }) => {
     const [visible, setVisible] = useState(false)
     const examContent = useAppSelector(state => state.exams.find((e: Exam) => e.id === exam.id))
+    const user = useAppSelector(state => state.auth)
     if (!examContent) return null
     return (
         <li>
@@ -14,7 +15,11 @@ const Exam = ({ exam }: { id: string, name: string }) => {
             <Togglable buttonLabel="View Details" visible={visible} toggleVisibility={() => setVisible(!visible)}>
                 <p>Rating: {examContent.rating}</p>
                 <p>Number of Questions: {examContent.questions.length}</p>
-                <Link to={`/exams/${exam.id}`}>Go to Exam Page</Link>
+                {user ? (
+                    <Link to={`/exams/${exam.id}`}>Go to Exam Page</Link>
+                ) : (
+                    <Link to='/login'>Log in and take this exam!</Link>
+                )}
             </Togglable>
         </li>
     )
@@ -23,7 +28,9 @@ const Exam = ({ exam }: { id: string, name: string }) => {
 const CoursePage = () => {
     const courseId = useParams().id
     const course = useAppSelector(state => state.courses.find((course: Course) => course.id === courseId))
+    const user = useAppSelector(state => state.auth)
     if (!course) return null
+
     return (
         <div>
             <h2>{course.name}</h2>

@@ -1,5 +1,4 @@
 import type { PropTypes } from '../types'
-import React from "react";
 
 interface TogglableProp extends PropTypes {
     buttonLabel: string,

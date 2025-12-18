@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import loginService from '../services/login'
-import type {AppDispatch} from "../store.ts";
+import type {AppDispatch} from "../store.ts"
 
 const authSlice = createSlice({
     name: 'auth',
@@ -22,6 +22,7 @@ export const login = (username: string, password: string) => {
         const user = await loginService.login({ username, password })
         window.localStorage.setItem('user', JSON.stringify(user))
         dispatch(setUser(user))
+        return user
     }
 }
 export const logout = () => {
@@ -30,3 +31,5 @@ export const logout = () => {
         dispatch(clearUser())
     }
 }
+export { setUser }
+export default authSlice.reducer

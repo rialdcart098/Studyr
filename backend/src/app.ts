@@ -6,6 +6,7 @@ import mongoose from 'mongoose'
 import { error, info } from './utils/logger.js'
 import { MONGODB_URI } from './utils/config.js'
 import { unknownEndpoint, errorHandler } from './utils/middleware.js'
+import loginRouter from "./controllers/login.js";
 // const cors = require('cors')
 // const path = require('path')
 
@@ -23,6 +24,7 @@ app.use(express.json())
 app.use('/api/courses', courseRouter)
 app.use('/api/exams', examRouter)
 app.use('/api/users', userRouter)
+app.use('/api/login', loginRouter)
 
 app.use(unknownEndpoint)
 app.use(errorHandler)
